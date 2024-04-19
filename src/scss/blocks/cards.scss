@@ -3,4 +3,159 @@
 @use '../mixins/responsive.scss' as *;
 
 
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 327px;
+    height: auto;
+    background-color: #1B1937;
+    border-radius: 8px;
+    @include responsive(laptop) {
+            width: 1110px;
+            height: 446px;
+            flex-direction: row;
+          
+    }
+
+    &__image {
+        border-radius: 8px;
+        border-bottom-left-radius:0;
+        border-bottom-right-radius:0;
+        width: 327px;
+        height: 240px;
+
+        @include responsive(laptop) {
+            width: 540px;
+            height: 446px;
+            border-radius:0;
+            border-bottom-right-radius:8px;
+            border-top-right-radius:8px;
+            position: absolute;
+            left: 285px;
+          
+
+    }
+
+        &::after {
+            @include pseudo (327px, 240px){
+                background-color: rgba(170, 92, 219, 0.2);
+                top: 0;
+                border-radius: 8px;
+                border-bottom-left-radius:0;
+                border-bottom-right-radius:0;
+            }
+            @include responsive(laptop) {
+                width: 540px;
+                height: 446px;
+                border-radius:0;
+                border-bottom-right-radius:8px;
+                border-top-right-radius:8px;
+                position: absolute;
+                left: 285px;
+        }
+        
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 32px;
+        padding-right: 32px;
+        @include responsive(laptop) {
+            position: absolute;
+            left: 0;
+            padding-left: 72px;
+            padding-right: 0;
+            align-items: flex-start;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        
+    }
+
+    &__title {
+        margin-block: 0;
+        margin-top: 2.5rem;
+        margin-bottom:1rem ;
+        text-align: center;
+        font-size: 1.75rem;
+        @include responsive(laptop) {
+            width: 403px;
+            text-align: left;
+            margin-top: 0px ;
+            margin-bottom: 25px;
+            font-size: 2.25rem;
+        }
+
+    }
+    &__title--purple {
+        color: #AB5CDB;
+        @include responsive(laptop){
+            font-size: 2.25rem;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        color: rgb(200, 200, 200);
+        margin-block: 0;
+        margin-bottom: 2.5rem;
+        font-size: 15px;
+        width: 264px;
+        @include responsive(laptop) {
+            width: 374px;
+            text-align: left;
+            margin-bottom: 72px;
+        }
+    }
+
+    &__number {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    &__label{
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: rgb(200, 200, 200);
+
+    }
+
+    &__number-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        margin-bottom: 24px;
+        @include responsive(laptop){
+            margin-bottom: 0;
+        }
+    }
+    &__number-container-last {
+        margin-bottom: 32px;
+        @include responsive (laptop){
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom-container {
+        display: flex;
+        flex-direction: column;
+
+        @include responsive(laptop){
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 63px;
+            margin-bottom:0;
+    }
+            
+        }
+    }
+
+
 
